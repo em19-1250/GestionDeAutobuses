@@ -1,0 +1,58 @@
+/* Estilo general */
+<link rel="stylesheet" href="~/css/site.css" / >
+body {
+    background-color: #f4f7f5; /* Verde grisáceo claro */
+    color: #1e1e1e; /* Texto oscuro */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #e0f2e9 !important; /* Verde muy claro */
+    border-bottom: 2px solid #a5d6a7;
+}
+
+.navbar-brand {
+    color: #1b5e20 !important;
+}
+
+.nav-link {
+    color: #2e7d32 !important;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: #1b5e20 !important;
+    }
+
+/* Footer */
+footer {
+    background-color: #e0f2e9;
+    padding: 1rem;
+    color: #4b4b4b;
+    border-top: 1px solid #c8e6c9;
+    text-align: center;
+}
+
+/* Botones estilo verde */
+.btn-outline-success {
+    border-color: #2e7d32;
+    color: #2e7d32;
+}
+
+    .btn-outline-success:hover {
+        background-color: #2e7d32;
+        color: white;
+    }
+
+/* Cards */
+.card {
+    border-left: 4px solid #66bb6a;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Tablas */
+.table thead {
+    background-color: #e8f5e9;
+    color: #1b5e20;
+}

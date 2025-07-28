@@ -1,0 +1,49 @@
+﻿
+
+@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="text-center">
+    <h1 class="display-4 text-success fw-bold">Bienvenido a la Gestión de Autobuses</h1>
+    <p class="lead text-muted">Administra rutas, horarios, autobuses y reservas desde un solo lugar.</p>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Autobuses</h5>
+                <p class="card-text">Visualiza y administra los autobuses registrados.</p>
+                <a class="btn btn-outline-success" asp-controller="Autobuses" asp-action="Index">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Rutas</h5>
+                <p class="card-text">Gestiona las rutas disponibles para los autobuses.</p>
+                <a class="btn btn-outline-success" asp-controller="Rutas" asp-action="Index">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Horarios</h5>
+                <p class="card-text">Consulta y organiza los horarios de salida y llegada.</p>
+                <a class="btn btn-outline-success" asp-controller="Horarios" asp-action="Index">Ver más</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card shadow-sm border-0">
+            <div class="card-body text-center">
+                <h5 class="card-title text-success">Reservas</h5>
+                <p class="card-text">Revisa y administra las reservas realizadas.</p>
+                <a class="btn btn-outline-success" asp-controller="Reservas" asp-action="Index">Ver más</a>
+            </div>
+        </div>
+    </div>
+</div>
