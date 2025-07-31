@@ -1,56 +1,26 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-@model GestionAutobusesAPI.Models.Horario
+﻿@model GestionAutobusesAPI.Models.Horario
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Detalles del Horario";
 }
 
-<!DOCTYPE html>
+<h2>Detalles del Horario</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
+<div class="table-responsive">
+    <table class="table table-bordered bg-white">
+        <tr>
+            <th>Ruta</th>
+            <td>@Model.RutaId @Model.RutaId?</td>
+        </tr>
+        <tr>
+            <th>Hora de salida</th>
+            <td>@Model.FechaHoraSalida.ToString("dd/MM/yyyy HH:mm")</td>
+        </tr>
+        <tr>
+            <th>Hora de llegada</th>
+            <td>@Model.FechaHoraLlegada.ToString("dd/MM/yyyy HH:mm")</td>
+        </tr>
+    </table>
+</div>
 
-<div>
-    <h4>Horario</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.AutobusId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.AutobusId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.RutaId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.RutaId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaHoraSalida)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaHoraSalida)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaHoraLlegada)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaHoraLlegada)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
-</body>
-</html>
+<a class="btn btn-back" asp-action="Index">Volver a la lista</a>

@@ -12,9 +12,10 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 </head>
 <body>
-    <!-- Navbar personalizada -->
-    <nav class="navbar navbar-expand-lg border-bottom shadow-sm">
-        <div class="container-fluid">
+
+    <!-- Navbar azul profesional -->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
             <a class="navbar-brand fw-bold" href="/">Gestión Autobuses</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
@@ -24,7 +25,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" asp-controller="Home" asp-action="Index">Inicio</a></li>
-                    <li class="nav-item"><a class="nav-link" asp-controller="Autobuses" asp-action="Index">Autobuses</a></li>
+                    <li class="nav-item"><a class="nav-link" asp-controller="Autobus" asp-action="Index">Autobuses</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Rutas" asp-action="Index">Rutas</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Horarios" asp-action="Index">Horarios</a></li>
                     <li class="nav-item"><a class="nav-link" asp-controller="Reservas" asp-action="Index">Reservas</a></li>
@@ -33,13 +34,13 @@
         </div>
     </nav>
 
-    <!-- Contenido -->
-    <div class="container mt-4">
+    <!-- Contenido principal centrado -->
+    <div class="container my-5 bg-white rounded shadow-sm p-4">
         @RenderBody()
     </div>
 
-    <!-- Footer personalizado -->
-    <footer class="mt-5 text-center p-3 border-top">
+    <!-- Footer -->
+    <footer class="text-center py-3 border-top">
         &copy; @DateTime.Now.Year - Gestión de Autobuses. Todos los derechos reservados.
     </footer>
 

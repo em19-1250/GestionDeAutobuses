@@ -1,66 +1,37 @@
-﻿@{
+﻿@model IEnumerable<GestionAutobusesAPI.Models.Reserva>
+@{
+    ViewData["Title"] = "Reservas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@model IEnumerable<GestionAutobusesAPI.Models.Reserva>
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<h1 class="mb-4">Reservas</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-custom-green mb-3">Crear Nueva Reserva</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.NombrePasajero)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Cedula)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.HorarioId)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaReserva)
-            </th>
-            <th></th>
+            <th>Pasajero</th>
+            <th>Cédula</th>
+            <th>Horario</th>
+            <th>Fecha de Reserva</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.NombrePasajero)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Cedula)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.HorarioId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaReserva)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.NombrePasajero</td>
+                <td>@item.Cedula</td>
+                <td>@item.HorarioId</td>
+                <td>@item.FechaReserva</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-</body>
-</html>

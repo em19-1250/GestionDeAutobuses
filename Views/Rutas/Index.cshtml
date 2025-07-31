@@ -1,60 +1,35 @@
-﻿@{
+﻿@model IEnumerable<GestionAutobusesAPI.Models.Ruta>
+@{
+    ViewData["Title"] = "Rutas";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@model IEnumerable<GestionAutobusesAPI.Models.Ruta>
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
-</head>
-<body>
+<h1 class="mb-4">Rutas</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-custom-green mb-3">Crear Nueva Ruta</a>
 </p>
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Origen)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Destino)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DistanciaKm)
-            </th>
-            <th></th>
+            <th>@Html.DisplayNameFor(model => model.Origen)</th>
+            <th>@Html.DisplayNameFor(model => model.Destino)</th>
+            <th>@Html.DisplayNameFor(model => model.DistanciaKm)</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Origen)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Destino)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DistanciaKm)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Origen)</td>
+                <td>@Html.DisplayFor(modelItem => item.Destino)</td>
+                <td>@Html.DisplayFor(modelItem => item.DistanciaKm)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-primary">Editar</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info text-white">Detalles</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
-</body>
-</html>

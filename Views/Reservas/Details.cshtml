@@ -1,56 +1,25 @@
-﻿@{
+﻿@model GestionAutobusesAPI.Models.Reserva
+@{
+    ViewData["Title"] = "Detalles de Reserva";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@model GestionAutobusesAPI.Models.Reserva
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-
-<div>
+<h1 class="mb-4">Detalles de Reserva</h1>
+<div class="card">
     <h4>Reserva</h4>
     <hr />
     <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NombrePasajero)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NombrePasajero)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Cedula)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Cedula)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.HorarioId)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.HorarioId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.FechaReserva)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.FechaReserva)
-        </dd>
+        <dt class="col-sm-3">Pasajero</dt>
+        <dd class="col-sm-9">@Model.NombrePasajero</dd>
+        <dt class="col-sm-3">Cédula</dt>
+        <dd class="col-sm-9">@Model.Cedula</dd>
+        <dt class="col-sm-3">Horario</dt>
+        <dd class="col-sm-9">@Model.HorarioId</dd>
+        <dt class="col-sm-3">Fecha de Reserva</dt>
+        <dd class="col-sm-9">@Model.FechaReserva</dd>
     </dl>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+<div class="mt-3">
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-custom-green">Editar</a>
+    <a asp-action="Index" class="btn btn-back">Volver a la lista</a>
 </div>
-</body>
-</html>

@@ -1,22 +1,11 @@
-﻿@{
+﻿@model GestionAutobusesAPI.Models.Horario
+
+@{
+    ViewData["Title"] = "Create";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-@model GestionAutobusesAPI.Models.Horario
-
-@{
-    Layout = null;
-}
-
-<!DOCTYPE html>
-
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Create</title>
-</head>
-<body>
+<h1>Create</h1>
 
 <h4>Horario</h4>
 <hr />
@@ -55,5 +44,3 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-</body>
-</html>

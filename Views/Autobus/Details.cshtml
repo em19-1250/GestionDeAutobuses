@@ -1,56 +1,25 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-
-@model WebApplication1.Models.Autobus
+﻿@model WebApplication1.Models.Autobus
 
 @{
-    Layout = null;
+    ViewData["Title"] = "Detalles del Autobús";
 }
 
-<!DOCTYPE html>
+<h2>Detalles del Autobús</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-
-<div>
-    <h4>Autobus</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Marca)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Marca)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Modelo)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Modelo)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Capacidad)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Capacidad)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Placa)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Placa)
-        </dd>
-    </dl>
+<div class="table-responsive">
+    <table class="table table-bordered bg-white">
+        <tr>
+            <th>Placa</th>
+            <td>@Model.Placa</td>
+        </tr>
+        <tr>
+            <th>Capacidad</th>
+            <td>@Model.Capacidad</td>
+        </tr>
+        <tr>
+            <th>Modelo</th>
+            <td>@Model.Modelo</td>
+        </tr>
+    </table>
 </div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
-</body>
-</html>
+<a class="btn btn-back" asp-action="Index">Volver a la lista</a>
